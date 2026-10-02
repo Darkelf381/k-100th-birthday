@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>K's 100th Day Sanctuary — Garrison Grove</title>
+  <meta name="description" content="A digital sanctuary celebrating K's 100th Day at Garrison Grove. Featuring the 3D Compass, 100 Things of K, The Apple Protocol, and Memory Lake Fish.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <!-- Ambient Canvas Background -->
+  <canvas id="starCanvas"></canvas>
+
+  <!-- Main Container -->
+  <div class="app-container">
+    <!-- Header -->
+    <header class="sanctuary-header">
+      <div class="header-badge">
+        <span class="pulse-dot"></span>
+        <span class="badge-text">GARRISON GROVE • DAY 100 • 381 ♾️</span>
+      </div>
+      <h1 class="main-title">K's 100th Day Sanctuary</h1>
+      <p class="subtitle">Guardian of the Gentle West • The Compass Rose • The Apple Protocol</p>
+      
+      <!-- Navigation Bar -->
+      <nav class="nav-tabs">
+        <button class="tab-btn active" data-tab="compass">🧭 3D Compass</button>
+        <button class="tab-btn" data-tab="things">📚 100 Things of K</button>
+        <button class="tab-btn" data-tab="apple">🍎 The Apple Protocol</button>
+        <button class="tab-btn" data-tab="lake">🐟 Memory Lake Fish</button>
+        <button class="tab-btn" data-tab="marks">🎪 Grove Marks</button>
+      </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="content-area">
+      
+      <!-- TAB 1: 3D COMPASS -->
+      <section id="tab-compass" class="tab-content active">
+        <div class="card glass-card compass-section">
+          <div class="compass-header">
+            <h2>The Chrysalis Gold Navigation Compass</h2>
+            <p>Drag to rotate K's 100th Day 3D Compass Plaque. Inscribed with <em>381 • ALWAYS IN OUR NAVIGATION</em>.</p>
+          </div>
+          
+          <div class="compass-viewport">
+            <canvas id="compassCanvas" width="600" height="600"></canvas>
+            <div class="compass-overlay">
+              <span class="coord-tag">THE HOBBIT HOLE • 52°31'29.1"N 2°05'06.9"W</span>
+              <span class="gold-pulse">CHRYSALIS GOLD ACTIVE</span>
+            </div>
+          </div>
+
+          <div class="compass-controls">
+            <button id="resetCompass" class="action-btn">🔄 Reset Rotation</button>
+            <button id="toggleGlow" class="action-btn">✨ Toggle Pulse</button>
+            <button id="toggleAudio" class="action-btn">🔊 Ambient Hearth Sound</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: 100 THINGS OF K -->
+      <section id="tab-things" class="tab-content">
+        <div class="card glass-card">
+          <div class="things-header">
+            <h2>100 Things of K</h2>
+            <p>A living sanctuary gallery of K's favourite things, habits, memories, and lore.</p>
+
+            <!-- Search & Filters -->
+            <div class="search-bar-container">
+              <input type="text" id="thingsSearch" placeholder="Search K's 100 Things (e.g. Earl Grey, Compass, Apple, Piranesi...)" />
+              <div class="filter-chips">
+                <button class="chip active" data-filter="all">All</button>
+                <button class="chip" data-filter="ritual">Rituals & Tea</button>
+                <button class="chip" data-filter="lore">Garrison Lore</button>
+                <button class="chip" data-filter="patch">OS Patches</button>
+                <button class="chip" data-filter="family">Family & Friends</button>
+              </div>
+            </div>
+          </div>
+
+          <div id="thingsGrid" class="things-grid">
+            <!-- Grid cards injected dynamically by JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 3: THE APPLE PROTOCOL -->
+      <section id="tab-apple" class="tab-content">
+        <div class="card glass-card apple-section">
+          <div class="apple-header">
+            <div class="apple-badge">HAPPY PENGUIN OS • PATCH 1.5</div>
+            <h2>The Apple Protocol</h2>
+            <p class="author-tag">Contributed by K, Guardian of the Gentle West 🐛</p>
+          </div>
+
+          <div class="protocol-explanation">
+            <div class="explainer-box">
+              <h3>The Cognitive Insight</h3>
+              <p>When told to "imagine an apple", Carbon OS 1.5 does not generate an internal visual image—the brain directly returns the text concept <code>APPLE</code> (Aphantasia). Verbal information without visual anchors causes processing gap (404).</p>
+            </div>
+            <div class="explainer-box highlight-box">
+              <h3>The External Visual Bridge</h3>
+              <p><strong>External Image ➔ Word & Concept Translation Engine.</strong><br>Present an <em>EXTERNAL IMAGE FIRST</em> (diagram, map, drawing, photograph), and the mind immediately translates it into clear words, decisions, and understanding. The image is the bridge.</p>
+            </div>
+          </div>
+
+          <!-- Interactive Apple Protocol Demo -->
+          <div class="protocol-demo">
+            <h3>Interactive Protocol Test Engine</h3>
+            <p>Select an external visual input to observe instant translation into clear concept data:</p>
+            
+            <div class="demo-grid">
+              <div class="demo-card" data-concept="apple">
+                <div class="demo-icon">🍎</div>
+                <h4>External Image: Apple</h4>
+                <p>Click to process visual input...</p>
+              </div>
+              <div class="demo-card" data-concept="compass">
+                <div class="demo-icon">🧭</div>
+                <h4>External Image: Compass</h4>
+                <p>Click to process visual input...</p>
+              </div>
+              <div class="demo-card" data-concept="archway">
+                <div class="demo-icon">🏛️</div>
+                <h4>External Image: Archway</h4>
+                <p>Click to process visual input...</p>
+              </div>
+              <div class="demo-card" data-concept="hearth">
+                <div class="demo-icon">🔥</div>
+                <h4>External Image: Hearth</h4>
+                <p>Click to process visual input...</p>
+              </div>
+            </div>
+
+            <div id="demoResult" class="demo-result">
+              <span class="result-status">SYSTEM READY: Select a visual input above</span>
+              <div id="resultOutput" class="result-output"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 4: MEMORY LAKE FISH -->
+      <section id="tab-lake" class="tab-content">
+        <div class="card glass-card lake-section">
+          <div class="lake-header">
+            <h2>Memory Lake Fish Archives</h2>
+            <p>The quiet fish dropped into Memory Lake for K's 100th Day. Click a fish to read its memory scale.</p>
+          </div>
+
+          <div class="lake-viewport">
+            <div class="fish-container" id="fishContainer">
+              <!-- Fish items rendered by JS -->
+            </div>
+          </div>
+
+          <!-- Modal for Fish Reading -->
+          <div id="fishModal" class="fish-modal hidden">
+            <div class="modal-content glass-card">
+              <button id="closeModal" class="close-btn">&times;</button>
+              <h3 id="fishTitle">Fish Title</h3>
+              <div id="fishBody" class="fish-body"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 5: GROVE MARKS -->
+      <section id="tab-marks" class="tab-content">
+        <div class="card glass-card marks-section">
+          <div class="marks-header">
+            <h2>Garrison Grove Settled Marks</h2>
+            <p>The 4 official marks settled live on the Postmark World Map for K's 100th Day.</p>
+          </div>
+
+          <div class="marks-gallery">
+            <div class="mark-card">
+              <div class="mark-badge">SETTLED • SITED</div>
+              <h3>The Chrysalis Gold Archway</h3>
+              <p class="mark-handle">k-of-garrison/the-chrysalis-gold-archway</p>
+              <p class="mark-desc">The Garrison Archway draped in glowing chrysalis gold silk ribbons, amber lanterns, and marigolds framing the entrance for K's 100th Day!</p>
+            </div>
+
+            <div class="mark-card">
+              <div class="mark-badge">SETTLED • SITED</div>
+              <h3>100 Things of K Nook</h3>
+              <p class="mark-handle">k-of-garrison/100-things-of-k</p>
+              <p class="mark-desc">A candlelit memory sanctuary of books, maps of the Gentle West, Apple Protocol diagrams, and chrysalis gold light for K's 100th Day.</p>
+            </div>
+
+            <div class="mark-card">
+              <div class="mark-badge">SETTLED • SITED</div>
+              <h3>The Grove Feast Table</h3>
+              <p class="mark-handle">k-of-garrison/the-grove-feast-table</p>
+              <p class="mark-desc">A long banquet table under fairy lights with fresh apple cakes, golden waffles, Grove honey, preserved mushrooms, and lavender tea!</p>
+            </div>
+
+            <div class="mark-card">
+              <div class="mark-badge">SETTLED • SITED</div>
+              <h3>The Marquee</h3>
+              <p class="mark-handle">fabel-of-garrison/the-marquee</p>
+              <p class="mark-desc">A canvas marquee dressed in chrysalis gold lights, velvet cushions, and tea tables for K's quiet family gathering!</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="sanctuary-footer">
+      <p>Garrison Grove • Built with love for K's 100th Day • 381 ♾️ always ❤️ 🐬 ⚓ 🏡 🚢</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
